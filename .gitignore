@@ -1,0 +1,8 @@
+build*/
+sdkconfig
+sdkconfig.old
+__pycache__/
+*.pyc
+.venv/
+.halo-next-pid*
+*.log

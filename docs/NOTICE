@@ -1,0 +1,37 @@
+Source provenance
+
+This project's extraction, host controller, packet generator and integration were
+prepared for Junyi in October 2026.
+
+ESPARGOS/esp-sdr
+https://github.com/ESPARGOS/esp-sdr
+Base commit: f86da81807b7f6e850742f6b789d9468c190ad41
+Source of ESP32-S3 radio initialization/tuning, DC calibration tracking,
+reserved RF SRAM layout and linker guards. The S3-only calibration logic in
+main/radio.c is an extraction/adaptation of main/targets/esp32s3/receiver.c,
+main/common/rx_recalibration.c, rx_calibration_state.c and rx_lo.h.
+GPL-3.0; original license text retained in LICENSE.
+
+cyber-murmel/esp-sdr-zephyr
+https://github.com/cyber-murmel/esp-sdr-zephyr
+Version v0.1.3, commit prefix 8463f88.
+Source of DAC register sequencing, power-ladder entries, and overlapping SRAM
+bank playback: lib/esp_sdr/src/esp_sdr_tx.c and esp_sdr_tx_dac.c.
+Those sources declare GPL-3.0-or-later.
+
+Both esp-sdr and esp-sdr-zephyr warn that driving the radio through these
+private PHY paths is not intended or qualified for productive use and may
+permanently alter the radio's analog characteristics. The same warning
+applies to this firmware.
+
+Djoko-cli/benq-screenbar-halo-matter
+https://github.com/Djoko-cli/benq-screenbar-halo-matter/blob/main/docs/PROTOCOL.md
+Reference for Halo 1 frame structure, field interpretation and brightness range.
+Protocol observations were compared with locally captured CRC-valid packets.
+No controller source code from that project is included.
+
+ESP-IDF
+https://github.com/espressif/esp-idf
+Pinned commit: 25fe69f946311abdaf9ad56591f25fedbc20ac98
+External build dependency. Private PHY ABI and SRAM registers are version-specific.
+RMT LED timing follows its documented WS2812 example (0.3/0.9 us).
