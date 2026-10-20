@@ -12,7 +12,7 @@ Uses private Espressif PHY functions. Wi-Fi is unavailable while this firmware r
 
 ## Hardware
 
-1. ESP32-S3-WROOM-1 (N8R8)
+1. ESP32-S3 (I only have an ESP32-S3-WROOM-1 N8R8 to test with; other modules are untested)
 2. Your Screenbar's 4-byte pairing address (this project does not discover it)
 
 ## Build and flash
